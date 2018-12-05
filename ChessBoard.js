@@ -58,6 +58,10 @@ export default class ChessBoard extends React.Component {
 
   onMouseClick = (rowNum, colNum) => {
 
+    if (this.squareHasBeenVisited(colNum, rowNum)) {
+      return;
+    }
+
     const { currentCol, currentRow } = this.state;
     const postObject = { from: [currentCol, currentRow], to: [colNum, rowNum]}
 
@@ -73,10 +77,6 @@ export default class ChessBoard extends React.Component {
     .then(data => {
       const nextRow = data.to[1];
       const nextCol = data.to[0];
-
-      if (this.squareHasBeenVisited(nextCol, nextRow)) {
-        return;
-      }
 
       if (data.isLegal) {
         const currentSquare = [nextCol, nextRow];
