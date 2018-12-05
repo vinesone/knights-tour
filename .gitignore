@@ -1,0 +1,24 @@
+# OS config files
+.DS_Store
+
+# Logs
+logs
+*.log
+
+# Directories used by Storybook app
+storybook-static
+storybook-testing
+
+# Compiled binary
+build
+dist
+
+# Dependency directories
+node_modules
+scripts/bin
+
+# npm
+.npm
+npm-debug.log*
+package-lock.json
+
